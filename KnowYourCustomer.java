@@ -29,7 +29,7 @@ public class KnowYourCustomer
 			signupDate = format.parse(signup);
 			currentDate = format.parse(current);
 		}
-		catch(Exception e)
+		catch(ParseException exception)
 		{
 			System.out.println("Date is Invalid");
 			return 0;
@@ -51,10 +51,13 @@ public class KnowYourCustomer
 			calCurrent.setTime(currentDate);
 			
 			
-			
+			//To get the period
+			//Subtract the current date from signup date
 			int years = calCurrent.get(Calendar.YEAR) - calSignup.get(Calendar.YEAR);
 			calSignup.add(GregorianCalendar.YEAR, years);
 			
+			
+			//
 			calSignup.add(GregorianCalendar.DAY_OF_MONTH, -30);
 			
 			System.out.print(format.format(calSignup.getTime()) + " ");
@@ -97,7 +100,7 @@ public class KnowYourCustomer
 			data[i][1] = currentDate;
 		}
 		
-		System.out.println("**********Result**********");
+		System.out.println("OUTPUT");
 		for(int i=0;i<noOfInputs;i++)
 		{
 			try 
