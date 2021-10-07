@@ -1,5 +1,4 @@
 //Assignment - 4
-//Gruber Healthcare, KYC
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
